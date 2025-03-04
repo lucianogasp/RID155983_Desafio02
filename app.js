@@ -43,16 +43,4 @@ window.document.addEventListener('DOMContentLoaded', () => {
             apiMethods.scrollDown(weatherSection);
         }
     })
-
-
-    // Testes
-    // document.querySelector('header').addEventListener('click', () => {
-    //     const cep = document.querySelector('#cep').value;
-    //     const res = validationCep(cep);
-    // })
-    // document.querySelector('footer').addEventListener('click', () => {
-    //     const lat = document.querySelector('#latitude').value;
-    //     const long = document.querySelector('#longitude').value;
-    //     const res = validationWeather(lat, long);
-    // })
 })
