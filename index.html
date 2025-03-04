@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Consumindo API de CEP e Clima</title>
+</head>
+<body>
+    <div class="background-container background-gray">
+        <header class="header background-blue flex jusCon-spacebetween al-center">
+            <h2>DncWeather</h2>
+            <nav class="flex al-center">
+                <ul class="flex nav-list gap-2">
+                    <li><a href="#location-section">Endereços</a></li>
+                    <li><a href="#weather-section">Previsão do Tempo</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--Título principal-->
+        <section class="container">
+            <div class="flex al-center gap-2 jusCon-center col-black">
+                <h2>Descubra Mais com Precisão:<br>Previsões do Tempo e endereços em tempo real.</h2>
+                <img src="./assets/cloudAndSun.svg" alt="cloudAndSun">
+            </div>
+        </section>
+
+        <!--Sessão Formulário-->
+        <section class="container flex jusCon-center">
+            <form class="background-white flex flex-dir-column jusCon-center wdth-hght-form border-form" id="form-section">
+                <!--Primeiro Nome-->
+                <label 
+                    for="primeiro-nome"
+                >Primeiro Nome:</label>
+                <input class="wdth-hght-input-form border-input-form"
+                    type="text" 
+                    id="primeiro-nome" 
+                    placeholder="Insira seu primeiro nome"
+                    required
+                >
+                <!--E-mail-->
+                <label 
+                    for="email"
+                >E-mail:</label>
+                <input class="wdth-hght-input-form border-input-form"
+                    type="email" 
+                    id="email" 
+                    placeholder="Insira seu e-mail"
+                    required
+                >
+                <!--CEP-->
+                <label 
+                    for="cep"
+                >Digite o CEP:</label>
+                <input class="wdth-hght-input-form border-input-form"
+                    type="text"
+                    id="cep"
+                    placeholder="Insira o CEP"
+                >
+                <!--Lat/Long-->
+                <label 
+                >Digite a latitude e longitude para saber a previsão:</label>
+                <div class="flex jusCon-center gap-1">
+                    <!--latitude-->
+                    <input class="wdth-hght-input-form border-input-form"
+                        type="float" 
+                        id="latitude" 
+                        placeholder="Latitude"
+                    >
+                    <!--longitude-->
+                    <input class="wdth-hght-input-form border-input-form"
+                        type="float" 
+                        id="longitude" 
+                        placeholder="Longitude"
+                    >
+                </div>
+                <button class="button-form wdth-hght-input-form border-input-form background-blue"
+                ><a href="">Acessar</a>
+                </button>
+            </form>
+        </section>
+
+        <!--Busca por CEP-->
+        <section id="location-section" class="container">
+            <div class="flex al-center gap-2 jusCon-spacearound col-black">
+                <h2>Resultado da busca por CEP:</h2>
+                <img src="./assets/gps-icon.svg" alt="gps-icon">
+            </div>
+            <ul id="sla" class="grid grid-2Row-autoColumn txt-center al-center nav-list background-linear-gradient border-form">
+                <li 
+                class="title-list wdth-hght-search al-center">Logradouro/Nome</li>
+                <li id="logradouro"
+                class="result-list col-black wdth-hght-search al-center"></li>
+                <li
+                class="title-list wdth-hght-search al-center">Bairro/Distrito</li>
+                <li  id="bairro"
+                class="result-list col-black wdth-hght-search al-center"></li>
+                <li 
+                class="title-list wdth-hght-search al-center">Localidade/UF</li>
+                <li id="localidade"
+                class="result-list col-black wdth-hght-search al-center"></li>
+            </ul>
+        </section>
+
+        <!--Resultado da Previsão do tempo-->
+        <section id="weather-section" class="container">
+            <div class="flex al-center gap-2 jusCon-spacearound col-black">
+                <h2>Previsão do tempo e região:</h2>
+                <img src="./assets/clouds.svg" alt="clouds">
+            </div>
+            <div class="background-white wdth-hght-search border-form al-center txt-center result-list col-black">
+                <p id="temperature"></p>
+            </div>
+        </section>
+
+        <footer class="footer flex jusCon-end background-blue">
+            <ul class="flex gap-txt nav-list">
+                <li>Termos de Uso</li>
+                <li>|</li>
+                <li>Política de Privacidade</li>
+            </ul>
+        </footer>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
